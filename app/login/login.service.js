@@ -3,9 +3,11 @@ angular.module("login")
 
         var isLoggedIn = false;
         var user;
+        var admin = false;
         return {
             doLogin: function(username, password) {
-
+                console.log(admin);
+                console.log(isLoggedIn);
                 var login = {
                     email: username,
                     password: password
@@ -14,6 +16,10 @@ angular.module("login")
                     user = response.data;
                     if (user.email == username) {
                         isLoggedIn = true;
+                        if(user.role == "Administrator") {
+                            admin = true;
+                        }
+                        console.log(admin);
                         console.log(isLoggedIn);
                         // console.log(user);
                     };
