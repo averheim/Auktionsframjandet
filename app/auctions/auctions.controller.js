@@ -10,4 +10,12 @@ angular.module("auctions")
         $scope.categories = response.data;
     });
 
+
+    $scope.closeM = function () {
+        window.location.reload();
+    }
+    $scope.auctionSelected = function (auction) {
+        $location.path("product/" + auction.id)
+
+        }
 }]);
