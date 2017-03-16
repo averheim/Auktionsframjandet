@@ -31,3 +31,24 @@
     z-index:100;
 
 }
+
+.modal-picture{
+    display: block;
+    max-width: 400px;
+    max-height: 400px;
+    width: auto;
+    height: auto;
+
+}
+.modal-dialog{
+    width: 80%;
+}
+#product-info{
+
+    border-color: red;
+}
+.product-info > p{
+font-family: "Berlin Sans FB";
+    font-size: large;
+}
+
