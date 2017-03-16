@@ -1,6 +1,6 @@
 angular.module("auctions")
-    .controller("auctionsController", ["$scope", "auctionsServiceFactory", "categoryService", "loginService",
-    function ($scope, auctionsServiceFactory, categoryService, loginService) {
+    .controller("auctionsController", ["$scope","$location", "auctionsServiceFactory", "categoryService", "loginService",
+    function ($scope, $location, auctionsServiceFactory, categoryService, loginService) {
 
         var admin;
         var loggedIn;

@@ -1,2 +1,2 @@
-angular.module("supplier", []);
+angular.module("suppliers", []);
 //lol
