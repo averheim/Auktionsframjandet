@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <base href="/">
+    <title>Nackbutik</title>
+
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="app/app.module.js"></script>
+    <script src="app/app.config.js"></script>
+    <script src="app/app.service.js"></script>
+    <script src="app/app.controller.js"></script>
+
+
+    <script src="app/auctions/auctions.module.js"></script>
+    <script src="app/auctions/auctions.service.js"></script>
+    <script src="app/auctions/auctions.categoryservice.js"></script>
+    <script src="app/auctions/auctions.controller.js"></script>
+
+    <script src="app/login/login.module.js"></script>
+    <script src="app/login/login.service.js"></script>
+    <script src="app/login/login.controller.js"></script>
+
+</head>
+
+<body ng-app="app" ng-controller="auctionsController">
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/" ng-click="categoryChosen(0)">NackButik</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/" ng-click="categoryChosen(0)">Alla produkter</a></li>
+            <li><a href="/cart">Kundvagn</a></li>
+            </ul>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/new-user"><span class="glyphicon glyphicon-user"></span> Skapa användare</a></li>
+            <li><a id="login" href="/login"><span class="glyphicon glyphicon-log-in"></span> Logga in</a></li>
+        </ul>
+        <form class="navbar-form navbar-right">
+            <div class="form-group">
+                <input ng-model="search" type="text" class="form-control" placeholder="Sök">
+            </div>
+
+        </form>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 col-md-offset-1" ng-view="">
+            <!-- innehåll -->
+        </div>
+    </div>
+</div>
+
+</body>
+<footer class="navbar-bottom">
+    <hr>
+    <p id="footer-text">Copyright 2017 &copy;</p>
+</footer>
+</html>
