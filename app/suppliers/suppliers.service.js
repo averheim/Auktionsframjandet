@@ -6,5 +6,5 @@ angular.module("suppliers").factory("suppliersFactoryService", "$http", function
         getSupplierDetails  :   function (supplier) {
             return $http.get("http://nackademiska-api.azurewebsites.net/api/supplier/" + supplier);
         }
-    }
+    }//lol
 });
