@@ -1,9 +1,9 @@
 {
   "name": "auktionsframjandet",
   "version": "1.0.0",
+  "description": "",
   "scripts": {
-    "start": "lite-server",
-    "postinstall": "bower install"
+    "start": "lite-server"
   },
   "repository": {
     "type": "git",
@@ -15,9 +15,7 @@
     "url": "https://github.com/averheim/Auktionsframjandet/issues"
   },
   "homepage": "https://github.com/averheim/Auktionsframjandet#readme",
-  "main": "index.js",
-  "description": "",
-  "devDependencies": {
+  "dependencies": {
     "lite-server": "^2.3.0"
   }
 }
