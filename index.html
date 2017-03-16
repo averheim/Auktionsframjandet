@@ -39,7 +39,7 @@
 </head>
 
 <body ng-app="app" ng-controller="auctionsController">
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="/" ng-click="categoryChosen(0)">NackButik</a>
@@ -71,8 +71,14 @@
 </div>
 
 </body>
-<footer class="navbar-bottom">
-    <hr>
-    <p id="footer-text">Copyright 2017 &copy;</p>
+<footer class="navbar-inverse navbar-fixed-bottom">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-offset-5 col-xs-2 text-center">
+                <p class="navbar-text">&copy; 2017</p>
+            </div>
+            <div class="col-xs-5"></div>
+        </div>
+    </div>
 </footer>
 </html>
