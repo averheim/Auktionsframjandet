@@ -19,11 +19,8 @@
 
 
 
-
-
-
 <ul class="list-group">
-    <li class="list-group-item" ng-repeat="auction in auctions | filter: {categoryId : selectedCategory} | filter: {name: searchTerm}" >
+    <li data-toggle="modal" data-target="#myModal" class="list-group-item" ng-repeat="auction in auctions | filter: {categoryId : selectedCategory} | filter: {name: searchTerm}" >
         <div class="row">
 
             <div class="col-md-8">
@@ -39,6 +36,38 @@
 
 
         </div>
+
+        <!-- modal start -->
+
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">{{auction.name}} </h4>
+                        <h1><small>{{auction.description}}</small></h1>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-1" id="pic"><img height="30" ng-src="{{auction.imageUrl}}"></div>
+                            <div class="col-md-4" id="infoTable">
+
+
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><a href="" data-toggle="modal" data-target="#myModal" id="myModalShower"></a></button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- modal slut -->
     </li>
 </ul>
 
