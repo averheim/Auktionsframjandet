@@ -1,3 +1,3 @@
-/**
- * Created by MacsMac on 2017-03-16.
- */
+angular.module("suppliers").controller("suppliersController", ["suppliersFactoryService", function (suppliersFactoryService) {
+
+}]);
