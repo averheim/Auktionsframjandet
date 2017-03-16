@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "lite-server"
+    "start": "lite-server",
+    "postinstall": "bower install"
   },
   "repository": {
     "type": "git",
