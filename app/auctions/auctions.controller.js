@@ -1,6 +1,9 @@
 angular.module("auctions")
-    .controller("auctionsController", ["$scope", "auctionsServiceFactory", "categoryService",
-    function ($scope, auctionsServiceFactory, categoryService) {
+    .controller("auctionsController", ["$scope", "auctionsServiceFactory", "categoryService", "loginService",
+    function ($scope, auctionsServiceFactory, categoryService, loginService) {
+
+        var admin;
+        $scope.admin = false;
 
     auctionsServiceFactory.getAllAuctions().then(function (response) {
         $scope.auctions = response.data;
@@ -17,5 +20,16 @@ angular.module("auctions")
     $scope.auctionSelected = function (auction) {
         $location.path("product/" + auction.id)
 
-        }
+    }
+    $scope.$watch(function() {return loginService.getAdmin()},
+            function(newValue, oldValue) {
+
+                if(newValue !== oldValue){
+                    $scope.admin = true;
+                    console.log(admin + "Admin")
+                }
+
+            });
+
+
 }]);

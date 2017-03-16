@@ -32,6 +32,9 @@ angular.module("login")
             },
             getUserId: function() {
                 return user;
+            },
+            getAdmin: function() {
+                return admin;
             }
         };
     }]);
