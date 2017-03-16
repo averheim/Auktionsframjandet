@@ -20,8 +20,8 @@
 
 
 <ul class="list-group">
-    <li data-toggle="modal" data-target="#myModal" class="list-group-item" ng-repeat="auction in auctions | filter: {categoryId : selectedCategory} | filter: {name: searchTerm}" ng-click="auctionSelected(auction)" >
-        <div class="row">
+    <li  class="list-group-item" ng-repeat="auction in auctions | filter: {categoryId : selectedCategory} | filter: {name: searchTerm}" ng-click="auctionSelected(auction)" >
+        <div class="row" data-toggle="modal" data-target="#{{auction.id}}">
 
             <div class="col-md-8">
                 <img class="productImage thumbnail zoom pull-left" ng-src="{{auction.imageUrl}}">
@@ -39,7 +39,7 @@
 
         <!-- modal start -->
 
-        <div id="myModal" class="modal fade" role="dialog">
+        <div id="{{auction.id}}" class="modal fade" role="dialog">
             <div class="modal-dialog">
 
                 <!-- Modal content-->
