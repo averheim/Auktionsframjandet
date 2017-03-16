@@ -3,7 +3,9 @@ angular.module("auctions")
     function ($scope, auctionsServiceFactory, categoryService, loginService) {
 
         var admin;
+        var loggedIn;
         $scope.admin = false;
+        $scope.loggedIn = false;
 
     auctionsServiceFactory.getAllAuctions().then(function (response) {
         $scope.auctions = response.data;
@@ -24,12 +26,20 @@ angular.module("auctions")
     $scope.$watch(function() {return loginService.getAdmin()},
             function(newValue, oldValue) {
 
-                if(newValue !== oldValue){
-                    $scope.admin = true;
-                    console.log(admin + "Admin")
-                }
+                $scope.admin = newValue;
 
             });
 
+        $scope.$watch(function() {return loginService.getLoginValue()},
+            function(newValue, oldValue) {
+
+                    $scope.loggedIn = newValue;
+
+            });
+    $scope.logOut = function () {
+        console.log("test")
+         loginService.doLogOut();
+    }
 
 }]);
+

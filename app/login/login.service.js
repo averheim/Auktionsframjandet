@@ -27,6 +27,15 @@ angular.module("login")
 
 
             },
+            doLogOut : function() {
+                console.log("mums");
+                isLoggedIn = false;
+                admin = false;
+                user = null;
+                console.log(isLoggedIn);
+                console.log(admin);
+            },
+
             getLoginValue: function() {
                 return isLoggedIn;
             },
