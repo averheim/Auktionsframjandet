@@ -8,6 +8,10 @@ angular.module("app").config(["$routeProvider", "$locationProvider",  function (
             templateUrl: "app/login/login.template.html",
             controller: "loginController"
         })
+        .when("/new-user", {
+        templateUrl: "app/create-new-user/newuser.template.html",
+        controller: "customerCreateController"
+    })
 
         .otherwise("/");
     $locationProvider.html5Mode(true);

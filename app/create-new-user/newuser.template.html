@@ -1,10 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<div class="col-md-6">
 
-</body>
-</html>
+    <h1>Welcome!</h1>
+    <h2>Create an account</h2>
+
+    <label>First name: </label><br>
+    <input type="text" placeholder="First name..." ng-model="customer.firstname"><br><br>
+    <label>Last name: </label><br>
+    <input type="text" placeholder="Last name..." ng-model="customer.lastname"><br><br>
+    <label>Email: </label><br>
+    <input type="email" placeholder="Email..." ng-model="customer.email"><br><br>
+    <label>Password: </label><br>
+    <input type="password" placeholder="Password..." ng-model="customer.password"><br><br>
+    <label>Phone: </label><br>
+    <input type="text" placeholder="Phone..." ng-model="customer.phone"><br><br>
+
+    <label>Address: </label><br>
+    <input type="text" placeholder="Address..." ng-model="customer.address"><br><br>
+    <label>Postalcode: </label><br>
+    <input type="text" placeholder="Postalcode..." ng-model="customer.postalCode"><br><br>
+    <label>City: </label><br>
+    <input type="text" placeholder="City..." ng-model="customer.city"><br><br>
+
+
+    <form action="">
+        <input class="btn btn-primary" ng-click="createCustomer()" type="submit" value="Save!">
+    </form>
+
+</div>

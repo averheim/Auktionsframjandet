@@ -1,7 +1,6 @@
 {
   "name": "auktionsframjandet",
   "version": "1.0.0",
-  "description": "",
   "scripts": {
     "start": "lite-server",
     "postinstall": "bower install"
@@ -15,5 +14,10 @@
   "bugs": {
     "url": "https://github.com/averheim/Auktionsframjandet/issues"
   },
-  "homepage": "https://github.com/averheim/Auktionsframjandet#readme"
+  "homepage": "https://github.com/averheim/Auktionsframjandet#readme",
+  "main": "index.js",
+  "description": "",
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  }
 }

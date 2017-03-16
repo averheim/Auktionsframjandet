@@ -15,5 +15,15 @@
     "angular-animate": "^1.6.3",
     "angular-bootstrap": "^2.5.0",
     "angular-route": "^1.6.3"
+  },
+  "authors": [
+    "sultan012 <a_asultan@hotmail.com>"
+  ],
+  "main": "",
+  "dependencies": {
+    "angular": "^1.6.3",
+    "angular-bootstrap": "^2.5.0",
+    "angular-animate": "^1.6.3",
+    "angular-route": "^1.6.3"
   }
 }
