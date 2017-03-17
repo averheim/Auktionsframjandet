@@ -1,6 +1,7 @@
 angular.module("auctions")
     .controller("auctionsController", ["$scope","$location", "auctionsServiceFactory", "categoryService", "loginService",
     function ($scope, $location, auctionsServiceFactory, categoryService, loginService) {
+        console.log($scope);
 
         var admin;
         var loggedIn;
@@ -18,26 +19,29 @@ angular.module("auctions")
 
     $scope.closeM = function () {
         window.location.reload();
-    }
+    };
+
     $scope.auctionSelected = function (auction) {
         $location.path("product/" + auction.id)
 
-    }
+    };
+
     $scope.$watch(function() {return loginService.getAdmin()},
-            function(newValue, oldValue) {
+        function(newValue) {
 
                 $scope.admin = newValue;
 
+        });
+
+    $scope.$watch(function() {return loginService.getLoginValue()},
+        function(newValue) {
+
+                $scope.loggedIn = newValue;
+
             });
 
-        $scope.$watch(function() {return loginService.getLoginValue()},
-            function(newValue, oldValue) {
-
-                    $scope.loggedIn = newValue;
-
-            });
     $scope.logOut = function () {
-        console.log("test")
+        console.log("test");
          loginService.doLogOut();
     }
 
