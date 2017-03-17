@@ -17,8 +17,14 @@
         <button ng-click="isOpen = !isOpen" class="btn btn-primary">Visa info om leverantören</button>
 
         <div ng-init="isOpen = false" ng-show="isOpen">
-            <p>{{auction.supplier.companyName}}</p>
-            <p>lol</p>
+            <h3>{{supplier.companyName}}</h3>
+            <h5>Kontaktuppgifter</h5>
+            <p>{{supplier.phone}}<br>{{supplier.email}}</p>
+
+            <h5>Adress</h5>
+            <p>{{supplier.address}}<br>
+                {{supplier.postalCode}}<br>
+                {{supplier.city}}</p>
         </div>
     </div>
 </div>

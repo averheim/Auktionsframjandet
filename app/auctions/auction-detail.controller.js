@@ -4,10 +4,10 @@ angular.module("auctions").controller("auctionDetailController", ["$scope", "$ro
         $scope.auction = response.data;
     });
 
-    $scope.getSUpplier = function (id) {
+    $scope.getSupplier = function (id) {
         auctionsServiceFactory.getSupplierById(id).then(function (response) {
-            $scope.auction.supplier = response.data;
-            console.log($scope.auction.supplier.companyName);
+            $scope.supplier = response.data;
+            console.log($scope.supplier.companyName);
         })
     }
 
