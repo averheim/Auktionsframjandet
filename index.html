@@ -18,14 +18,13 @@
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
 
     <script src="app/app.module.js"></script>
     <script src="app/app.config.js"></script>
     <script src="app/app.service.js"></script>
     <script src="app/app.controller.js"></script>
-
 
     <script src="app/auctions/auctions.module.js"></script>
     <script src="app/auctions/auctions.service.js"></script>
@@ -52,19 +51,20 @@
         <ul class="nav navbar-nav">
             <li><a href="/" ng-click="categoryChosen(0)">Alla produkter</a></li>
             <li ng-show="admin"><a href="/admin">Admin</a></li>
-            </ul>
         </ul>
+
         <ul class="nav navbar-nav navbar-right">
             <li ng-hide="loggedIn"><a href="/new-user"><span class="glyphicon glyphicon-user"></span> Skapa användare</a></li>
             <li ng-hide="loggedIn"><a id="login" href="/login"><span class="glyphicon glyphicon-log-in"></span> Logga in</a></li>
             <li ng-show="loggedIn"><a ng-click="logOut()" id="logout" href="/"><span class="glyphicon glyphicon-log-in"></span> Logga ut</a></li>
         </ul>
+
         <form class="navbar-form navbar-right">
             <div class="form-group">
                 <input ng-model="search" type="text" class="form-control" placeholder="Sök">
             </div>
-
         </form>
+
     </div>
 </nav>
 <div class="container">

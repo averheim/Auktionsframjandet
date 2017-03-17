@@ -44,12 +44,15 @@
     height: auto;
 
 }
+
 .modal-dialog{
     width: 80%;
 }
-.list-group-item:hover{
-    box-shadow: -9px 1px 62px -12px rgba(84,9,84,1);
-}
+
+/*.list-group-item:hover{*/
+    /*box-shadow: -9px 1px 62px -12px rgba(84,9,84,1);*/
+/*}*/
+
 .product-info > p{
 font-family: "Berlin Sans FB";
     font-size: large;

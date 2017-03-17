@@ -1,8 +1,9 @@
-angular.module("app").config(["$routeProvider", "$locationProvider",  function ($routeProvider, $locationProvider) {
+angular.module("app").config(["$routeProvider", "$locationProvider",
+    function ($routeProvider, $locationProvider) {
     $routeProvider
         .when("/", {
-            templateUrl :   "app/auctions/auctions.template.html",
-            controller  :   "auctionsController"
+            templateUrl: "app/auctions/auctions.template.html",
+            controller: "auctionsController"
         })
         .when("/login", {
             templateUrl: "app/login/login.template.html",
@@ -12,7 +13,6 @@ angular.module("app").config(["$routeProvider", "$locationProvider",  function (
         templateUrl: "app/create-new-user/newuser.template.html",
         controller: "customerCreateController"
     })
-
 
         .otherwise("/");
     $locationProvider.html5Mode(true);
