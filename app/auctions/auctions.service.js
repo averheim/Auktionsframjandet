@@ -3,14 +3,17 @@ angular.module("auctions").factory("auctionsServiceFactory", ["$http", function 
         getAllAuctions  :   function () {
             return $http.get("http://nackademiska-api.azurewebsites.net/api/auction");
         },
+        getAllCompleted :   function () {
+            return $http.get("http://nackademiska-api.azurewebsites.net/api/auction/completed");
+        },
         getAuctionById  :   function (id) {
             return $http.get("http://nackademiska-api.azurewebsites.net/api/auction/" + id);
         },
         getSupplierById :   function (id) {
             return $http.get("http://nackademiska-api.azurewebsites.net/api/supplier/" + id);
         },
-        getBids : function (auctionID) {
-            return $http.get("http://nackademiska-api.azurewebsites.net/api/bid/" + auctionID )
+        getHighestBid   :   function (id) {
+            return $http.get("http://nackademiska-api.azurewebsites.net/api/bid/" + id);
         }
     }
 }]);

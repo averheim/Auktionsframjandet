@@ -20,7 +20,7 @@
 
 
 <ul class="list-group">
-    <li class="list-group-item" ng-repeat="auction in auctions | filter: {categoryId : selectedCategory} | filter: {name: searchTerm}">
+    <li class="list-group-item" ng-repeat="auction in auctions | filter: {categoryId : selectedCategory} | filter: {name: searchTerm} | filter: {completedAuctions:auction}">
         <div ng-click="auctionSelected(auction)" class="row">
 
             <div class="col-md-8">
