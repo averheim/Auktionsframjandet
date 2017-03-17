@@ -15,6 +15,7 @@ angular.module("auctions").controller("auctionDetailController", ["$scope", "$ro
         var highestBid = Math.max.apply(Math, bidPrices);
         console.log(highestBid);
         $scope.highestBid = highestBid;
+        $scope.bids = bidPrices;
     });
 
     $scope.getSupplier = function (id) {
