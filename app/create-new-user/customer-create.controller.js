@@ -6,6 +6,7 @@ angular.module("customer")
 
             $scope.createCustomer = function(){
                 var newCustomer = {
+
                     firstName: $scope.customer.firstName,
                     lastName: $scope.customer.lastName,
                     email: $scope.customer.email,
@@ -16,10 +17,13 @@ angular.module("customer")
                     city: $scope.customer.city,
                     role: Customer
 
+
                 };
 
-                customerService.createCustomer(newCustomer).then(function(){
-                    $location.path("/login");
+                customerService.createcustomer(newCustomer).then(function(response){
+
+                    if(response.status) {
+                        $location.path("/login");}
                 });
 
             };
