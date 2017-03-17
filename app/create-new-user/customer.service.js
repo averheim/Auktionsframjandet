@@ -1,29 +1,23 @@
 angular.module("customer")
     .factory("customerService", ["$http", function($http){
-        // var customers = [];
-        return{
-            getcustomers    : getcustomers,
-            getcustomerById : getcustomerById,
-            createcustomer  : createcustomer
-        }
-        function getcustomers(){
-            return $http.get("http://nackbutik.azurewebsites.net/api/customer/");
-        }
-        function getcustomerById(customerId){
-            return $http.get("http://nackbutik.azurewebsites.net/api/customer/" + customerId);
-        }
-        function createcustomer(customer) {
-            var data = customer;
-            var config = {
-                header : {
-                    'Content-Type': 'application/json; charset=utf-8',
-                }
-            };
-            return $http.post('http://nackbutik.azurewebsites.net/api/account', data, config)
+
+        return {
+            createCustomer: function(customer){
+                return $http.get("http://nackademiska.azurewebsites.net/api/customer", customer); //AJAX post
+            }
+        };
+        function createCustomer(customer){
+
+            var input = customer;
+
+            return $http.post('http://nackademiska.azurewebsites.net/api/account', input)
                 .then(
                     function successCallback(response){
+                        appServiceFactory.createCustomer(true);
+                        appServiceFactory.createCustomer(response.input);
                         return {
                             status : true,
+                            input : response.input
                         }
                     },
                     function errorCallback(response){
@@ -32,4 +26,4 @@ angular.module("customer")
                         }
                     });
         }
-    }])
+    }]);

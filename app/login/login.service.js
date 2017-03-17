@@ -9,10 +9,12 @@ angular.module("login")
             doLogin: function(username, password) {
                 console.log(admin);
                 console.log(isLoggedIn);
+
                 var login = {
                     email: username,
                     password: password
                 };
+
                 $http.post("http://nackademiska-api.azurewebsites.net/api/account/login", login).then(function(response){
                     user = response.data;
                     if (user.email == username) {
@@ -25,7 +27,6 @@ angular.module("login")
                         // console.log(user);
                     }
                 });
-
 
             },
             doLogOut : function() {

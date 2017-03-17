@@ -1,2 +1,1 @@
 angular.module("suppliers", []);
-//lol
