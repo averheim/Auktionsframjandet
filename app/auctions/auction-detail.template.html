@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-md-4">
+        <img class="detail-img" ng-src="{{auction.imageUrl}}">
+    </div>
+    <div class="col-md-4">
+        <h1>{{auction.name}}</h1>
+        <p>Start: {{auction.startTime}}<br> Slut: {{auction.endTime}}</p>
+        <button class="btn btn-danger">Köp nu: {{auction.buyNowPrice}}</button>
+        <p>Högsta budet: To be added</p>
+        <h4>Beskrivning:</h4>
+        <p>{{auction.description}}</p>
+    </div>
+</div>
+<div class="row">
+    <br>
+    <div ng-click="getSupplier(auction.supplierId)">
+        <button ng-click="isOpen = !isOpen" class="btn btn-primary">Visa info om leverantören</button>
+
+        <div ng-init="isOpen = false" ng-show="isOpen">
+            <p>{{auction.supplier.companyName}}</p>
+            <p>lol</p>
+        </div>
+    </div>
+</div>

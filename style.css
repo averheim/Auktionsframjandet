@@ -58,3 +58,10 @@ font-family: "Berlin Sans FB";
     font-size: large;
 }
 
+.detail-img {
+    max-width: 300px;
+    max-height: 300px;
+
+    width: auto;
+    height: auto;
+}
