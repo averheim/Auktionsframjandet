@@ -18,6 +18,20 @@ angular.module("auctions")
         $scope.categories = response.data;
     });
 
+        auctionsServiceFactory.getBids($scope.ID).then(function (response) {
+            var bids = response.data;
+            var highestbid = bids[0].bidPrice;
+
+            for (var i = 1; i < bids.length; i++){
+                if (bids[i].bidPrice > bids[i-1].bidPrice){
+                    highestbid = bids[i].bidPrice;
+                }
+            }
+            $scope.highestbid = highestbid;
+            console.log(highestbid);
+
+        });
+
     $scope.auctionSelected = function (auction) {
         $location.path("/auction-detail/" + auction.id);
     };
