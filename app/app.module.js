@@ -1,1 +1,1 @@
-angular.module("app", ["ui.bootstrap", "ngRoute", "auctions", "login", "suppliers"]); //, "admin", "bid"
+angular.module("app", ["ui.bootstrap", "ngRoute", "auctions", "login", "suppliers", "customer", "bid", "admin"]);// "auction", "..."
