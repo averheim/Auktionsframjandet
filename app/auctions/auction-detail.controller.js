@@ -1,4 +1,4 @@
-angular.module("auctions").controller("auctionDetailController", ["$scope", "$routeParams", "auctionsServiceFactory", function ($scope, $routeParams, auctionsServiceFactory) {
+angular.module("auctions").controller("auctionDetailController", ["$scope", "$routeParams", "auctionsServiceFactory", "loginService", "bidService", function ($scope, $routeParams, auctionsServiceFactory, loginService, bidService) {
 
 
 
@@ -24,6 +24,20 @@ angular.module("auctions").controller("auctionDetailController", ["$scope", "$ro
             console.log($scope.supplier.companyName);
         })
     };
+
+    $scope.placeBid = function (auction) {
+        var userId = loginService.getUserId();
+        var bid = $scope.bid;
+        var bidInfo = {
+            auctionId   :   auction.id,
+            customerId  :   userId.id,
+            bidPrice    :   bid
+        };
+        console.log(bidInfo);
+        bidService.placeBid(bidInfo).then(function (response) {
+            console.log("hej");
+        })
+    }
 
 
 

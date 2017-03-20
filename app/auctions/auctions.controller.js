@@ -1,6 +1,6 @@
 angular.module("auctions")
-    .controller("auctionsController", ["$scope","$location", "auctionsServiceFactory", "categoryService", "loginService",
-    function ($scope, $location, auctionsServiceFactory, categoryService, loginService) {
+    .controller("auctionsController", ["$scope","$location", "auctionsServiceFactory", "categoryService", "loginService", "bidService",
+    function ($scope, $location, auctionsServiceFactory, categoryService, loginService, bidService) {
 
         var admin;
         var loggedIn;
@@ -66,6 +66,8 @@ angular.module("auctions")
         console.log("test");
          loginService.doLogOut();
     }
+
+
 
 }]);
 

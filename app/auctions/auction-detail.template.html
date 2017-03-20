@@ -9,8 +9,8 @@
         <div class="jumbotron">
             <p>Start: {{auction.startTime}}<br> Slut: {{auction.endTime}}</p>
 
-                <input class="form-control" type="number" placeholder="Lägg bud" min="1"><br>
-                <button class="btn btn-danger">Lägg bud</button>
+                <input class="form-control" type="number" placeholder="Lägg bud" min="1" ng-model="bid"><br>
+                <button class="btn btn-danger" ng-click="placeBid(auction)">Lägg bud</button>
                 <button class="btn btn-danger">Köp nu: {{auction.buyNowPrice}}</button>
 
         </div>
@@ -20,6 +20,8 @@
 
 
         <p>Högsta budet: {{highestBid}}</p>
+
+
 
         <button ng-click="BidBoxIsOpen = !BidBoxIsOpen" class="btn btn-primary">Visa budhistoriken</button>
 
@@ -39,7 +41,7 @@
     <div ng-click="getSupplier(auction.supplierId)">
         <button ng-click="isOpen = !isOpen" class="btn btn-primary">Visa info om leverantören</button>
 
-        <div ng-init="isOpen = false" ng-show="isOpen">
+        <div ng-init="isOpen = false" ng-show="isOpen" class="jumbotron">
             <h3>{{supplier.companyName}}</h3>
             <h5>Kontaktuppgifter</h5>
             <p>{{supplier.phone}}<br>{{supplier.email}}</p>
