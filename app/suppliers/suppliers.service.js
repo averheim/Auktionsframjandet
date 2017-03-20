@@ -1,4 +1,4 @@
-angular.module("suppliers").factory("suppliersFactoryService", "$http", function ($http) {
+angular.module("suppliers").factory("suppliersFactoryService", ["$http", function ($http) {
     return {
         getAllSuppliers: function () {
             return $http.get("http://nackademiska-api.azurewebsites.net/api/supplier");
@@ -7,4 +7,4 @@ angular.module("suppliers").factory("suppliersFactoryService", "$http", function
             return $http.get("http://nackademiska-api.azurewebsites.net/api/supplier/" + supplier);
         }
     };
-});
+}]);
