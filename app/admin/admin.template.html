@@ -1,9 +1,38 @@
-<!--<ul class="list-group" ng-repeat="auction in completedAuctions">-->
-    <!--<li class="list-group-item"> {{auction.commisson}} </li>-->
-<!--</ul>-->
-<!--<p> Test </p>-->
-<!--<p> Test </p>-->
-<!--<p> Test </p>-->
-<!--<p> Test </p>-->
-<!--<p> Test </p>-->
-<!--<p> Test </p>-->
+<div class="row">
+    <div class="col-md-8">
+    <table class="table borderless">
+    <thead>
+        <th>Auktions ID</th>
+        <th>Produktnamn</th>
+        <th>Provision</th>
+    </thead>
+    <tbody>
+        <tr ng-repeat="auction in completedAuctions">
+            <td>{{auction.id}}</td>
+            <td>{{auction.name}}</td>
+            <td>{{auction.earnedCommission}} kr</td>
+        </tr>
+
+    </tbody>
+</table>
+    </div>
+        <div class="col-md-4">
+            <table class="table borderless">
+                <thead>
+                <th>Månad</th>
+                <th>Försäljning</th>
+                </thead>
+                <tbody>
+                <tr ng-repeat="month in salesReport">
+                    <td>{{month.month}}</td>
+                    <td>{{month.totalCommision}} kr</td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+</div>
+
+
+
