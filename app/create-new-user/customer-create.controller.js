@@ -4,7 +4,7 @@ angular.module("customer")
 
             $scope.customer = {};
 
-            $scope.createCustomer = function() {
+            $scope.createCustomer = function(){
                 var newCustomer = {
 
                     firstName: $scope.customer.firstName,
@@ -13,19 +13,18 @@ angular.module("customer")
                     password: $scope.customer.password,
                     phone: $scope.customer.phone,
                     address: $scope.customer.address,
-                    postalCode: $scope.customer.postalCode,
+                    postalcode: $scope.customer.postalcode,
                     city: $scope.customer.city,
-                    role: "Customer"
+                    role: Customer
 
 
                 };
 
-                customerService.createCustomer(newCustomer).then(function () {
+                customerService.createcustomer(newCustomer).then(function(response){
 
-                    $location.path("/login");
-
+                    if(response.status) {
+                        $location.path("/login");}
                 });
-            }
-        }]);
 
-//
+            };
+        }]);

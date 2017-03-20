@@ -65,3 +65,6 @@ font-family: "Berlin Sans FB";
     width: auto;
     height: auto;
 }
+.error{
+    color: red;
+}

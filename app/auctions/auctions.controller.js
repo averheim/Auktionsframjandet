@@ -34,9 +34,7 @@ angular.module("auctions")
     categoryService.getCategories().then(function (response) {
         $scope.categories = response.data;
     });
-
-        /*auctionsServiceFactory.getBids($scope.ID).then(function (response) {
-
+/**
         auctionsServiceFactory.getBids($scope.ID).then(function (response) {
             var bids = response.data;
             var highestbid = bids[0].bidPrice;
@@ -48,9 +46,8 @@ angular.module("auctions")
             }
             $scope.highestbid = highestbid;
             console.log(highestbid);
-
-        });*/
-
+        });
+*/
     $scope.auctionSelected = function (auction) {
         $location.path("/auction-detail/" + auction.id);
     };

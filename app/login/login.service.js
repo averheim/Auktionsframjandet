@@ -1,5 +1,5 @@
 angular.module("login")
-    .factory("loginService", ["$http", function($http) {
+    .factory("loginService", ["$http", "$location", function($http, $location) {
 
         var isLoggedIn = false;
         var user;
@@ -7,9 +7,6 @@ angular.module("login")
 
         return {
             doLogin: function(username, password) {
-                console.log(admin);
-                console.log(isLoggedIn);
-
                 var login = {
                     email: username,
                     password: password
@@ -19,23 +16,21 @@ angular.module("login")
                     user = response.data;
                     if (user.email == username) {
                         isLoggedIn = true;
+                        $location.path("/");
                         if(user.role == "Administrator") {
                             admin = true;
                         }
-                        console.log(admin);
-                        console.log(isLoggedIn);
-                        // console.log(user);
+                    }else {
+                        function loginFailed() {
+                            return true;
+                        }
                     }
                 });
-
             },
             doLogOut : function() {
-                console.log("mums");
                 isLoggedIn = false;
                 admin = false;
                 user = null;
-                console.log(isLoggedIn);
-                console.log(admin);
             },
 
             getLoginValue: function() {

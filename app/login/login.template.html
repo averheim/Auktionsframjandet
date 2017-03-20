@@ -18,6 +18,8 @@
             <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary" ng-click="doLogin(username, password)">Login</button>
             <a href="/" class="btn btn-link">Avbryt</a>
         </div>
+        <br>
+        <p class="error" ng-hide="!loginFailed">Inloggningen misslyckades, kontrollera användarnamn och lösenord!</p>
 
     </form>
 </div>

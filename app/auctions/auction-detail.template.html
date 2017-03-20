@@ -36,6 +36,7 @@
         <p>{{auction.description}}</p>
     </div>
 </div>
+
 <div class="row">
     <br>
     <div ng-click="getSupplier(auction.supplierId)">
@@ -43,6 +44,7 @@
 
         <div ng-init="isOpen = false" ng-show="isOpen" class="jumbotron">
             <h3>{{supplier.companyName}}</h3>
+
             <h5>Kontaktuppgifter</h5>
             <p>{{supplier.phone}}<br>{{supplier.email}}</p>
 
