@@ -56,7 +56,7 @@
     </div>
     </form>
 
-    <a class="btn btn-info" role="button" ng-click="createCustomer()">Save</a>
+    <a class="btn btn-info" ng-disabled="form.$invalid" role="button" ng-click="createCustomer()">Save</a>
     <b class="alert alert-success" ng-show="showSuccess">Användare skapad!</b>
     <b class="alert alert-danger" ng-show="showFailure">Lyckades inte skapa
         användare!</b>

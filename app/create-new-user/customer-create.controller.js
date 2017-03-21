@@ -36,18 +36,6 @@ angular.module("customer")
                     $scope.showSuccess = true;
                     $scope.showFailure = false;
 
-                    $scope.customer.firstName = "";
-                    $scope.customer.lastName = "";
-                    $scope.customer.email = "";
-                    $scope.customer.password = "";
-                    $scope.customer.phone = "";
-                    $scope.customer.address = "";
-                    $scope.customer.postalCode = "";
-                    $scope.customer.city = "";
-
-
-
-
                 }, function(error){
                     $scope.showSuccess = false;
                     $scope.showFailure = true;
