@@ -3,7 +3,7 @@ angular.module("customer")
 
         return {
             createCustomer: function(customer){
-                return $http.post("http://nackademiska-api.azurewebsites.net/api/account", customer); //AJAX post
+                return $http.post("http://nackademiska-api.azurewebsites.net/api/account", customer);
             }
         };
 

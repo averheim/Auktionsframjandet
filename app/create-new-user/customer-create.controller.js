@@ -35,6 +35,7 @@ angular.module("customer")
                 customerService.createCustomer(newCustomer).then(function(response){
                     $scope.showSuccess = true;
                     $scope.showFailure = false;
+                    $location.path("/login");
 
                 }, function(error){
                     $scope.showSuccess = false;
