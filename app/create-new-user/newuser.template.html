@@ -1,27 +1,64 @@
 <div class="col-md-6">
 
     <h1>Välkommen!</h1>
-    <h2 ng-hide="isAdmin">Skapa ett kundkonto</h2><h2 ng-show="isAdmin">Skapa en adminstratör</h2>
+    <h2 ng-hide="isAdmin">Skapa ett kundkonto</h2>
+    <h2 ng-show="isAdmin">Skapa en adminstratör</h2>
 
-    <label>First name: </label><br>
-    <input type="text" placeholder="First name..." ng-model="customer.firstName"><br><br>
-    <label>Last name:</label><br>
-    <input type="text" placeholder="Last name..." ng-model="customer.lastName"><br><br>
-    <label>Email: </label><br>
-    <input type="email" placeholder="Email..." ng-model="customer.email"><br><br>
-    <label>Password: </label><br>
-    <input type="password" placeholder="Password..." ng-model="customer.password"><br><br>
-    <label>Phone:  </label><br>
-    <input type="text" placeholder="Phone..." ng-model="customer.phone"><br><br>
-    <label>Address: </label><br>
-    <input type="text" placeholder="Address..." ng-model="customer.address"><br><br>
-    <label>Postalcode: </label><br>
-    <input type="text" placeholder="Postalcode..." ng-model="customer.postalCode"><br><br>
-    <label>City:</label><br>
-    <input type="text" placeholder="City..." ng-model="customer.city"><br><br>
+
+
+    <form name="form" role="form">
+    <div class="form-group" ng-class="{ 'has-error': form.firstName.$touched && form.firstName.$invalid }">
+        <label for="firstName">First name: </label><br>
+        <input type="text" name="firstName" id="firstName" class="form-control" placeholder="First name..." ng-model="customer.firstName" required>
+        <span ng-show="form.firstName.$touched && form.firstName.$invalid" class="help-block">Ogiltig input</span>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error': form.lastName.$touched && form.lastName.$invalid }">
+        <label for="lastName">Last name: </label><br>
+        <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Last name..." ng-model="customer.lastName" required>
+        <span ng-show="form.lastName.$touched && form.lastName.$invalid" class="help-block">Ogiltig input</span>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error': form.email.$touched && form.email.$invalid }">
+        <label for="email">Email: </label><br>
+        <input type="email" name="email" id="email" class="form-control" placeholder="Email..." ng-model="customer.email" required>
+        <span ng-show="form.email.$touched && form.email.$invalid" class="help-block">Ogiltig input</span>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error': form.password.$touched && form.password.$invalid }">
+        <label for="password">Password: </label><br>
+        <input type="password" name="password" id="password" class="form-control" placeholder="Password..." ng-model="customer.password" required>
+        <span ng-show="form.password.$touched && form.password.$invalid" class="help-block">Ogiltig input</span>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error': form.phone.$touched && form.phone.$invalid }">
+        <label for="phone">Phone: </label><br>
+        <input type="text" name="phone" id="phone" class="form-control" placeholder="Phone..." ng-model="customer.phone" required>
+        <span ng-show="form.phone.$touched && form.phone.$invalid" class="help-block">Ogiltig input</span>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error': form.address.$touched && form.address.$invalid }">
+        <label for="address">Adress: </label><br>
+        <input type="text" name="address" id="address" class="form-control" placeholder="Address..." ng-model="customer.address" required>
+        <span ng-show="form.address.$touched && form.address.$invalid" class="help-block">Ogiltig input</span>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error': form.postalcode.$touched && form.postalcode.$invalid }">
+        <label for="postalcode">Postalcode: </label><br>
+        <input type="text" name="postalcode" id="postalcode" class="form-control" placeholder="Postalcode..." ng-model="customer.postalCode" required>
+        <span ng-show="form.postalcode.$touched && form.postalcode.$invalid" class="help-block">Ogiltig input</span>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error': form.city.$touched && form.city.$invalid }">
+        <label for="city">City: </label><br>
+        <input type="text" name="city" id="city" class="form-control" placeholder="City..." ng-model="customer.city" required>
+        <span ng-show="form.city.$touched && form.city.$invalid" class="help-block">Ogiltig input</span>
+    </div>
+    </form>
 
     <a class="btn btn-info" role="button" ng-click="createCustomer()">Save</a>
     <b class="alert alert-success" ng-show="showSuccess">Användare skapad!</b>
-    <b class="alert alert-danger" ng-show="showFailure">Lyckades inte skapa användare!</b>
+    <b class="alert alert-danger" ng-show="showFailure">Lyckades inte skapa
+        användare!</b>
 
 </div>

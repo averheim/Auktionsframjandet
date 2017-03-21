@@ -5,7 +5,7 @@
         <div class="form-group" ng-class="{ 'has-error': form.username.$touched && form.username.$invalid }">
             <label for="username">E-mail</label>
             <input type="email" name="username" id="username" class="form-control" ng-model="username" required />
-            <span ng-show="form.username.$touched && form.username.$invalid" class="help-block">E-mail behövs</span>
+            <span ng-show="form.username.$touched && form.username.$invalid" class="help-block">E-mail ogiltig</span>
         </div>
 
         <div class="form-group" ng-class="{ 'has-error': form.password.$touched && form.password.$invalid}">
