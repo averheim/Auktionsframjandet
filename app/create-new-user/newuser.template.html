@@ -3,23 +3,25 @@
     <h1>Welcome!</h1>
     <h2>Create an account</h2>
 
-    <label>First name: {{customer.firstName}}</label><br>
+    <label>First name: </label><br>
     <input type="text" placeholder="First name..." ng-model="customer.firstName"><br><br>
-    <label>Last name: {{customer.lastName}}</label><br>
+    <label>Last name:</label><br>
     <input type="text" placeholder="Last name..." ng-model="customer.lastName"><br><br>
-    <label>Email: {{customer.email}}</label><br>
+    <label>Email: </label><br>
     <input type="email" placeholder="Email..." ng-model="customer.email"><br><br>
-    <label>Password: {{customer.password}}</label><br>
+    <label>Password: </label><br>
     <input type="password" placeholder="Password..." ng-model="customer.password"><br><br>
-    <label>Phone: {{customer.phone}} </label><br>
+    <label>Phone:  </label><br>
     <input type="text" placeholder="Phone..." ng-model="customer.phone"><br><br>
-    <label>Address: {{customer.address}}</label><br>
+    <label>Address: </label><br>
     <input type="text" placeholder="Address..." ng-model="customer.address"><br><br>
-    <label>Postalcode: {{customer.postalCode}}</label><br>
+    <label>Postalcode: </label><br>
     <input type="text" placeholder="Postalcode..." ng-model="customer.postalCode"><br><br>
-    <label>City: {{customer.city}}</label><br>
+    <label>City:</label><br>
     <input type="text" placeholder="City..." ng-model="customer.city"><br><br>
 
     <a class="btn btn-info" role="button" ng-click="createCustomer()">Save</a>
+    <b class="alert alert-success" ng-show="showSuccess">Användare skapad!</b>
+    <b class="alert alert-danger" ng-show="showFailure">Lyckades inte skapa användare!</b>
 
 </div>
