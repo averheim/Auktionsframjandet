@@ -53,5 +53,8 @@ angular.module("auctions")
          loginService.doLogOut();
     };
 
+
+
+
 }]);
 

@@ -35,6 +35,20 @@
     z-index:100;
 
 }
+
+
+
+.animate-repeat {
+    line-height:30px;
+    list-style:none;
+    box-sizing:border-box;
+}
+
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+    transition:all linear 0.5s;
+}
 /*
 .modal-picture{
     display: block;

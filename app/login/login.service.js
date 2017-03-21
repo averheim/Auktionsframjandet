@@ -4,7 +4,6 @@ angular.module("login")
         var isLoggedIn = false;
         var user;
         var admin = false;
-        var loginFaild = false;
 
         return {
             doLogin: function(username, password) {
@@ -13,19 +12,7 @@ angular.module("login")
                     password: password
                 };
 
-                $http.post("http://nackademiska-api.azurewebsites.net/api/account/login", login).then(function(response){
-                    user = response.data;
-                    if (user.email == username) {
-                        isLoggedIn = true;
-                        $location.path("/");
-                        if(user.role == "Administrator") {
-                            admin = true;
-                        }
-                    }
-                    return true;
-                },function (response) {
-                    return false;
-                });
+                return $http.post("http://nackademiska-api.azurewebsites.net/api/account/login", login);
             },
             doLogOut : function() {
                 isLoggedIn = false;
@@ -37,10 +24,23 @@ angular.module("login")
                 return isLoggedIn;
             },
             getUserId: function() {
-                return user;
+                return user.id;
             },
             getAdmin: function() {
                 return admin;
+            },
+
+            setLoginValue: function(loginStatus) {
+                isLoggedIn = loginStatus;
+            },
+            setUserId: function(userId) {
+                user.id = userId;
+            },
+            setAdmin: function(isAdmin) {
+                admin = isAdmin;
+            },
+            setUserData: function(userData) {
+              user = userData;
             }
         };
     }]);
