@@ -36,7 +36,7 @@ angular.module("auctions").controller("auctionDetailController", ["$scope", "$ro
         var bid = $scope.bid;
         var bidInfo = {
             auctionId   :   auction.id,
-            customerId  :   userId.id,
+            customerId  :   userId,
             bidPrice    :   bid
         };
         console.log(bidInfo);
@@ -52,7 +52,7 @@ angular.module("auctions").controller("auctionDetailController", ["$scope", "$ro
         }
         var bidInfo = {
             auctionId   :   auction.id,
-            customerId  :   userId.id,
+            customerId  :   userId,
             bidPrice    :   auction.buyNowPrice
         };
         console.log(bidInfo);

@@ -1,10 +1,12 @@
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-5">
+            <h1>{{auction.name}}</h1>
         <img class="detail-img" ng-src="{{auction.imageUrl}}">
+        <h4>Beskrivning:</h4>
+        <p>{{auction.description}}</p>
     </div>
     <div class="col-md-6">
 
-            <h1>{{auction.name}}</h1>
 
         <div class="jumbotron">
             <p>Start: {{startTime}}<br> Slut: {{endTime}}</p>
@@ -13,27 +15,22 @@
                 <button class="btn btn-danger" ng-click="placeBid(auction)">Lägg bud</button>
                 <button class="btn btn-danger" ng-click="buyNow(auction)">Köp nu: {{auction.buyNowPrice}}</button>
 
+            <p>Högsta budet: {{highestBid}}</p>
+            <button ng-click="BidBoxIsOpen = !BidBoxIsOpen" class="btn btn-primary">Visa budhistoriken</button>
+            <div ng-init="BidBoxIsOpen = false" ng-show="BidBoxIsOpen">
+                <h5>Historik</h5>
+                <ol>
+                    <li ng-repeat="bid in bids">{{bid}}</li>
+                </ol>
+            </div>
         </div>
 
 
 
 
 
-        <p>Högsta budet: {{highestBid}}</p>
 
 
-
-        <button ng-click="BidBoxIsOpen = !BidBoxIsOpen" class="btn btn-primary">Visa budhistoriken</button>
-
-        <div ng-init="BidBoxIsOpen = false" ng-show="BidBoxIsOpen">
-            <h5>Historik</h5>
-            <ol>
-                <li ng-repeat="bid in bids">{{bid}}</li>
-            </ol>
-        </div>
-
-        <h4>Beskrivning:</h4>
-        <p>{{auction.description}}</p>
     </div>
 </div>
 
