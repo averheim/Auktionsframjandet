@@ -42,9 +42,13 @@ angular.module("auctions").controller("auctionDetailController", ["$scope", "$ro
             customerId  :   userId,
             bidPrice    :   bid
         };
-        bidService.placeBid(bidInfo).then(function (response) {
-            $scope.highestBid = bid;
-        })
+        if(bidInfo.bidPrice == undefined){
+            $scope.errorMessage = "Du måste skriva in ett bud för att buda";
+        } else {
+            bidService.placeBid(bidInfo).then(function (response) {
+                $scope.highestBid = bid;
+            })
+        }
     };
 
     $scope.buyNow = function (auction) {

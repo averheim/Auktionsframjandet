@@ -15,6 +15,7 @@
                 <button class="btn btn-danger" ng-click="placeBid(auction)">Lägg bud</button>
                 <button class="btn btn-danger" ng-click="buyNow(auction)">Köp nu: {{auction.buyNowPrice}}</button>
 
+                <h6 class="error">{{errorMessage}}</h6>
                 <p>{{bidMessage}}</p>
 
             <p>Högsta budet: {{highestBid}}</p>
