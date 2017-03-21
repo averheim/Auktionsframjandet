@@ -2,7 +2,7 @@ angular.module("login")
     .factory("loginService", ["$http", "$location", function($http, $location) {
 
         var isLoggedIn = false;
-        var user;
+        var user = {};
         var admin = false;
 
         return {
@@ -17,7 +17,10 @@ angular.module("login")
             doLogOut : function() {
                 isLoggedIn = false;
                 admin = false;
-                user = null;
+                user = {
+                    firstName: "",
+                    lastName: ""
+                }
             },
 
             getLoginValue: function() {
@@ -27,6 +30,10 @@ angular.module("login")
                 return user.id;
             },
             getUser: function() {
+                if(user == undefined) {
+                    user.firstName = "";
+                    user.lastName = "";
+                }
                 return user;
             },
             getAdmin: function() {

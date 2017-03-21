@@ -8,9 +8,10 @@ angular.module("auctions")
         $scope.loggedIn = false;
 
         $scope.$watch(function() {
-                return loginService.getUser().firstName + " " + loginService.getUser().lastName},
+            return loginService.getUser() },
+
             function(newValue) {
-                $scope.text = newValue;
+                $scope.text = newValue.firstName + " " + newValue.lastName;
             });
 
         var allAuctions = [];
