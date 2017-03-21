@@ -46,6 +46,7 @@ angular.module("auctions").controller("auctionDetailController", ["$scope", "$ro
             $scope.errorMessage = "Du måste skriva in ett bud för att buda";
         } else {
             bidService.placeBid(bidInfo).then(function (response) {
+                $scope.errorMessage = "";
                 $scope.highestBid = bid;
             })
         }
