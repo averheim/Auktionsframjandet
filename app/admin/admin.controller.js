@@ -1,16 +1,10 @@
 angular.module("admin").
-
-        controller("adminController", ["$scope","$filter", "adminService", "bidService", "auctionsServiceFactory", "suppliersFactoryService",
-            function ($scope, $filter, adminService, bidService, auctionsServiceFactory, suppliersFactoryService) {
-
-
+controller("adminController", ["$scope","$filter", "adminService", "bidService", "auctionsServiceFactory", "suppliersFactoryService",
+    function ($scope, $filter, adminService, bidService, auctionsServiceFactory, suppliersFactoryService) {
 
         var allSuppliers;
         var completedAuctions;
-
         var salesReport = [];
-        var check = true;
-
 
         suppliersFactoryService.getAllSuppliers().then(function (response) {
             allSuppliers = response.data;
@@ -52,7 +46,6 @@ angular.module("admin").
                                 salesReport.push(temp);
                             }
                         }
-
                     })
                 });
                 $scope.completedAuctions = completedAuctions;
