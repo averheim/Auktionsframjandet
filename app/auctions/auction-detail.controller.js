@@ -5,6 +5,8 @@ angular.module("auctions").controller("auctionDetailController", ["$scope", "$ro
 
     auctionsServiceFactory.getAuctionById($routeParams.auctionId).then(function (response) {
         $scope.auction = response.data;
+        $scope.startTime = $scope.auction.startTime.substring(0, 10) + " Kl: " + $scope.auction.startTime.substring(11, 16);
+        $scope.endTime = $scope.auction.endTime.substring(0, 10) + " Kl: " + $scope.auction.endTime.substring(11, 16);
     });
 
     auctionsServiceFactory.getHighestBid($routeParams.auctionId).then(function (response) {
@@ -39,7 +41,23 @@ angular.module("auctions").controller("auctionDetailController", ["$scope", "$ro
         };
         console.log(bidInfo);
         bidService.placeBid(bidInfo).then(function (response) {
-            console.log("hej");
+            console.log("Bud lades");
         })
+    };
+
+    $scope.buyNow = function (auction) {
+        var userId = loginService.getUserId();
+        if (userId == undefined){
+            $location.path("/login");
+        }
+        var bidInfo = {
+            auctionId   :   auction.id,
+            customerId  :   userId.id,
+            bidPrice    :   auction.buyNowPrice
+        };
+        console.log(bidInfo);
+        bidService.placeBid(bidInfo).then(function (response) {
+            console.log("Buy now pris köpt");
+        });
     }
 }]);

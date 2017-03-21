@@ -1,33 +1,33 @@
-<div class="container-fluid">
-<div class=row>
-    <div class="col-md-8">
+<div>
     <select ng-model = "selectedCategory">
         <option value="">All</option>
         <option ng-repeat="category in categories" value="{{category.id}}">
             {{category.name}}
+
         </option>
-    </select></div>
-
-    <div class="input-group" class="col-md-8">
-        <input type="text" class="form-control" ng-model="searchTerm" placeholder="Sök produkt">
-
-
+    </select>
 </div>
 
+
+
+<div>
+    <input ng-model="searchTerm" placeholder="Search Product">
+
+    </input>
 </div>
+
 
 
 
 <ul class="list-group">
-    <li class="list-group-item animate-repeat" ng-repeat="auction in auctions | filter: {categoryId : selectedCategory} | filter: {name: searchTerm }" ng-if="item.Show" ng-show="hasResults">
+    <li class="list-group-item" ng-repeat="auction in auctions | auctionTimeFilter | filter: {categoryId : selectedCategory} | filter: {name: searchTerm}">
         <div ng-click="auctionSelected(auction)" class="row">
 
             <div class="col-md-8">
                 <img class="productImage thumbnail zoom pull-left" ng-src="{{auction.imageUrl}}">
                 <div class="col-md-6 col-md-offset-1">
                     <p>{{auction.name}}</p>
-                    <p>Köp nu: {{auction.buyNowPrice + 'kr'}}</p>
-
+                    <p>Köp nu: {{auction.buyNowPrice}} :-</p>
                 </div>
             </div>
 
@@ -36,6 +36,3 @@
 
     </li>
 </ul>
-
-</div>
-

@@ -7,28 +7,19 @@ angular.module("auctions")
         $scope.admin = false;
         $scope.loggedIn = false;
 
-        var completedAuctions;
         var allAuctions = [];
-        var ongoingAuctions = [];
-
-
 
     auctionsServiceFactory.getAllAuctions().then(function (response) {
         allAuctions = response.data;
 
-        auctionsServiceFactory.getAllCompleted().then(function (response) {
-            completedAuctions = response.data;
-            $scope.auctions = $filter("auctionTimeFilter")(allAuctions, completedAuctions);
+        angular.forEach(allAuctions, function(auction) {
+            auctionsServiceFactory.getHighestBid(auction.id).then(function (response) {
+                var bids = response.data;
+                auction.highestBid = bids[bids.length-1].bidPrice;
+            })
         });
-
-
+        $scope.auctions = allAuctions;
     });
-
-
-
-
-
-
 
     categoryService.getCategories().then(function (response) {
         $scope.categories = response.data;
@@ -52,9 +43,6 @@ angular.module("auctions")
         console.log("test");
          loginService.doLogOut();
     };
-
-
-
 
 }]);
 
