@@ -33,7 +33,7 @@
 
     <div class="form-group" ng-class="{ 'has-error': form.phone.$touched && form.phone.$invalid }">
         <label for="phone">Phone: </label><br>
-        <input type="text" name="phone" id="phone" class="form-control" placeholder="Phone..." ng-model="customer.phone" required>
+        <input type="number" name="phone" id="phone" class="form-control" placeholder="Phone..." ng-model="customer.phone" required>
         <span ng-show="form.phone.$touched && form.phone.$invalid" class="help-block">Ogiltig input</span>
     </div>
 
@@ -45,7 +45,7 @@
 
     <div class="form-group" ng-class="{ 'has-error': form.postalcode.$touched && form.postalcode.$invalid }">
         <label for="postalcode">Postalcode: </label><br>
-        <input type="text" name="postalcode" id="postalcode" class="form-control" placeholder="Postalcode..." ng-model="customer.postalCode" required>
+        <input type="number" name="postalcode" id="postalcode" class="form-control" placeholder="Postalcode..." ng-model="customer.postalCode" required>
         <span ng-show="form.postalcode.$touched && form.postalcode.$invalid" class="help-block">Ogiltig input</span>
     </div>
 
