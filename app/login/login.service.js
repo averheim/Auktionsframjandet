@@ -4,6 +4,7 @@ angular.module("login")
         var isLoggedIn = false;
         var user;
         var admin = false;
+        var loginFaild = false;
 
         return {
             doLogin: function(username, password) {
@@ -20,11 +21,10 @@ angular.module("login")
                         if(user.role == "Administrator") {
                             admin = true;
                         }
-                    }else {
-                        function loginFailed() {
-                            return true;
-                        }
                     }
+                    return true;
+                },function (response) {
+                    return false;
                 });
             },
             doLogOut : function() {
