@@ -2,7 +2,7 @@
   "name": "auktionsframjandet",
   "description": "",
   "license": "ISC",
-  "homepage": "https://github.com/averheim/Auktionsframjandet",
+  "homepage": "",
   "ignore": [
     "**/.*",
     "node_modules",
