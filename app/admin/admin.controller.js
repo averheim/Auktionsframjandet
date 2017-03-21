@@ -14,7 +14,6 @@ angular.module("admin").
 
         suppliersFactoryService.getAllSuppliers().then(function (response) {
             allSuppliers = response.data;
-            console.log(allSuppliers);
             auctionsServiceFactory.getAllCompleted().then(function (response) {
                 completedAuctions = response.data;
                     angular.forEach(completedAuctions, function (auction) {
