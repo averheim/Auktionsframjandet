@@ -13,9 +13,6 @@ angular.module("auctions")
 
 
 
-
-
-
     auctionsServiceFactory.getAllAuctions().then(function (response) {
         allAuctions = response.data;
 

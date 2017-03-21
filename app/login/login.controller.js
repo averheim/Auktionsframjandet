@@ -8,12 +8,9 @@ controller("loginController", ["$scope", "$location", "loginService", function (
             
         });
 
-        // ,function () {
-        //     faildLogin = true;
-        // });
-        // $scope.isLoggedIn = function () {
-        //     return loginService.getLoginValue();
-        // }
+        $scope.isLoggedIn = function () {
+            return loginService.getLoginValue();
+        }
     };
 
 }]);
