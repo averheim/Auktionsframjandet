@@ -47,7 +47,6 @@ angular.module("auctions")
             });
 
     $scope.logOut = function () {
-        console.log("test");
          loginService.doLogOut();
     };
 

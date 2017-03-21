@@ -15,8 +15,12 @@ angular.module("auctions").controller("auctionDetailController", ["$scope", "$ro
         angular.forEach(bids, function (bid) {
             bidPrices.push(bid.bidPrice);
         });
-        var highestBid = Math.max.apply(Math, bidPrices);
-        console.log(highestBid);
+        var highestBid = bidPrices[bidPrices.length-1];
+
+        if(highestBid == undefined){
+            highestBid = 0;
+        }
+
         $scope.highestBid = highestBid;
         $scope.bids = bidPrices;
     });
@@ -24,40 +28,37 @@ angular.module("auctions").controller("auctionDetailController", ["$scope", "$ro
     $scope.getSupplier = function (id) {
         auctionsServiceFactory.getSupplierById(id).then(function (response) {
             $scope.supplier = response.data;
-            console.log($scope.supplier.companyName);
         })
     };
 
     $scope.placeBid = function (auction) {
-        var userId = loginService.getUserId();
-        if (userId == undefined){
+        if (!loginService.getLoginValue()){
             $location.path("/login");
         }
+        var userId = loginService.getUserId();
         var bid = $scope.bid;
         var bidInfo = {
             auctionId   :   auction.id,
             customerId  :   userId,
             bidPrice    :   bid
         };
-        console.log(bidInfo);
         bidService.placeBid(bidInfo).then(function (response) {
-            console.log("Bud lades");
+            $scope.bidMessage = "Nytt bud lades på " + bid + " Kronor";
         })
     };
 
     $scope.buyNow = function (auction) {
-        var userId = loginService.getUserId();
-        if (userId == undefined){
+        if (!loginService.getLoginValue()){
             $location.path("/login");
         }
+        var userId = loginService.getUserId();
         var bidInfo = {
             auctionId   :   auction.id,
             customerId  :   userId,
             bidPrice    :   auction.buyNowPrice
         };
-        console.log(bidInfo);
         bidService.placeBid(bidInfo).then(function (response) {
-            console.log("Buy now pris köpt");
+            $scope.bidMessage = "Du köpte varan för " + auction.buyNowPrice + " Kronor";
         });
     }
 }]);

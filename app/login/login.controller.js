@@ -16,7 +16,6 @@ controller("loginController", ["$scope", "$location", "loginService", function (
                 }
 
 
-                console.log(returnedUser.id);
                 $location.path("/");
 
         },

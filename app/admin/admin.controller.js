@@ -33,12 +33,10 @@ angular.module("admin").
                         var month = bids[bids.length-1];
 
                         month = $filter('date')(month.dateTime, "MMMM y");
-                        // console.log(month);
                         var temp = {
                             month: month,
                             totalCommision : auction.highestBid
                         };
-                        console.log(temp);
 
                         var monthFound = false;
                         if (salesReport.length == 0) {
@@ -57,15 +55,6 @@ angular.module("admin").
                             }
                         }
 
-
-                        console.log(salesReport);
-
-
-
-
-
-
-                        // console.log(auction.earnedCommission);
                     })
                 });
                 $scope.completedAuctions = completedAuctions;
