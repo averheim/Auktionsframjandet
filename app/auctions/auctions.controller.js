@@ -7,6 +7,12 @@ angular.module("auctions")
         $scope.admin = false;
         $scope.loggedIn = false;
 
+        $scope.$watch(function() {
+                return loginService.getUser().firstName + " " + loginService.getUser().lastName},
+            function(newValue) {
+                $scope.text = newValue;
+            });
+
         var allAuctions = [];
 
     auctionsServiceFactory.getAllAuctions().then(function (response) {

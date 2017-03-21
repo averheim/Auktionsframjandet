@@ -69,6 +69,7 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
+            <li ng-show="loggedIn"><a id="userName" ><span class="glyphicon glyphicon-user"></span> Inloggad: {{text}}</a></li>
             <li ng-hide="loggedIn"><a href="/new-user"><span class="glyphicon glyphicon-user"></span> Skapa användare</a></li>
             <li ng-hide="loggedIn"><a id="login" href="/login"><span class="glyphicon glyphicon-log-in"></span> Logga in</a></li>
             <li ng-show="loggedIn"><a ng-click="logOut()" href="/"><span class="glyphicon glyphicon-log-in"></span> Logga ut</a></li>

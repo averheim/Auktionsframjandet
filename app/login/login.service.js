@@ -26,6 +26,9 @@ angular.module("login")
             getUserId: function() {
                 return user.id;
             },
+            getUser: function() {
+                return user;
+            },
             getAdmin: function() {
                 return admin;
             },
