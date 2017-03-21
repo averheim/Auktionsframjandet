@@ -43,7 +43,7 @@ angular.module("auctions").controller("auctionDetailController", ["$scope", "$ro
             bidPrice    :   bid
         };
         bidService.placeBid(bidInfo).then(function (response) {
-            $scope.bidMessage = "Nytt bud lades på " + bid + " Kronor";
+            $scope.highestBid = bid;
         })
     };
 
@@ -58,6 +58,7 @@ angular.module("auctions").controller("auctionDetailController", ["$scope", "$ro
             bidPrice    :   auction.buyNowPrice
         };
         bidService.placeBid(bidInfo).then(function (response) {
+            $scope.highestBid = auction.buyNowPrice;
             $scope.bidMessage = "Du köpte varan för " + auction.buyNowPrice + " Kronor";
         });
     }
