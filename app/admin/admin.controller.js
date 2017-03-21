@@ -4,7 +4,6 @@ angular.module("admin").
             function ($scope, $filter, adminService, bidService, auctionsServiceFactory, suppliersFactoryService) {
 
 
-        console.log("test från admin Ctrl");
 
         var allSuppliers;
         var completedAuctions;
@@ -12,7 +11,7 @@ angular.module("admin").
         var salesReport = [];
         var check = true;
 
-        console.log("test från admin Ctrl");
+
         suppliersFactoryService.getAllSuppliers().then(function (response) {
             allSuppliers = response.data;
             console.log(allSuppliers);
