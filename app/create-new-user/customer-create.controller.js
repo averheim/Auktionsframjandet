@@ -1,6 +1,18 @@
 angular.module("customer")
-    .controller("customerCreateController", ["$scope", "$location", "$routeParams", "customerService", //login?
-        function($scope, $location, $routeParams, customerService){
+    .controller("customerCreateController", ["$scope", "$location", "$routeParams", "customerService","loginService",
+        function($scope, $location, $routeParams, customerService, loginService){
+
+            $scope.isAdmin = false;
+
+            if (loginService.getAdmin()) {
+                $scope.role = "Administrator";
+                $scope.isAdmin = true;
+
+            } else {
+                $scope.role = "Customer";
+            }
+
+
 
             $scope.customer = {};
             $scope.showSuccess = false;
@@ -17,9 +29,7 @@ angular.module("customer")
                     address: $scope.customer.address,
                     postalCode: $scope.customer.postalCode,
                     city: $scope.customer.city,
-                    role: "Customer"
-
-
+                    role: $scope.role
                 };
 
                 customerService.createCustomer(newCustomer).then(function(response){

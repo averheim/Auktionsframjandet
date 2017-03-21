@@ -1,7 +1,7 @@
 <div class="col-md-6">
 
-    <h1>Welcome!</h1>
-    <h2>Create an account</h2>
+    <h1>Välkommen!</h1>
+    <h2 ng-hide="isAdmin">Skapa ett kundkonto</h2><h2 ng-show="isAdmin">Skapa en adminstratör</h2>
 
     <label>First name: </label><br>
     <input type="text" placeholder="First name..." ng-model="customer.firstName"><br><br>
